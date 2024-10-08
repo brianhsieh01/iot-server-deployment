@@ -24,12 +24,11 @@ docker run -d \
     postgres:16.4
 
 # Build and start Nest.js application
-docker build -t iot-server-backend .
 docker run -d \
     --name iot_server_backend \
     --network iot_server_network \
     -p 3002:3002 \
     --env-file .env \
-    iot-server-backend
+    chyuanxie/iot-server-backend:v1.0
 
 echo "IoT Server application is starting. You can access it at http://localhost:3002"
